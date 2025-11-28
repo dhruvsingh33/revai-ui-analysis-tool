@@ -1,0 +1,528 @@
+:root {
+    --color-bg-body: #f3f4f6;
+    --color-bg-card: #ffffff;
+    --color-bg-card-rgb: 255, 255, 255;
+    --color-text-base: #1f2937;
+    --color-text-muted: #6b7280;
+    --color-border: #d1d5db;
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+}
+
+[data-theme="dark"] {
+    --color-bg-body: #111827;
+    --color-bg-card: #1f2937;
+    --color-bg-card-rgb: 31, 41, 55;
+    --color-text-base: #f9fafb;
+    --color-text-muted: #9ca3af;
+    --color-border: #4b5563;
+    --color-primary: #60a5fa;
+    --color-primary-hover: #3b82f6;
+    --color-success: #34d399;
+    --color-warning: #fcd34d;
+    --color-danger: #f87171;
+}
+
+img[alt="RevAI"] {
+    width: 3.25rem; /* Equivalent to w-13 */
+    height: 3rem;  /* Equivalent to h-12 */
+}
+
+header .flex.items-center.space-x-2 span {
+    font-size: 1.25rem; /* Equivalent to text-xl */
+    font-weight: 600;  /* Equivalent to font-semibold */
+    color: var(--color-text-base);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: transparent;
+    color: var(--color-text-base);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Keep transition for theme changes */
+}
+
+/* Ensure the main content area grows to push the footer down */
+main {
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+    background-color: transparent; /* Ensure content area is transparent */
+    padding-top: 4rem; /* Account for fixed header height */
+}
+
+/* Apply glassmorphism effect and positioning to header, main sections, and footer */
+header#header {
+    background-color: rgba(var(--color-bg-card-rgb), 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-color: var(--color-border);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Re-add shadow for definition */
+}
+
+/* Specific styling for the analyzer and results sections */
+section#analyzer,
+#results > div {
+    background-color: rgba(var(--color-bg-card-rgb), 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-color: var(--color-border);
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 1rem 1.5rem;
+    color: var(--color-text-base);
+}
+
+footer#footer {
+    background-color: rgba(var(--color-bg-card-rgb), 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
+    /* Modernizing footer text */
+    text-align: center;
+    padding: 1.5rem 0; /* Adjust padding for better look */
+}
+
+/* Modernizing header and footer text formatting */
+header .flex.items-center.space-x-2 span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-base);
+    padding-left: 0.5rem; /* Small padding for text next to logo */
+}
+
+header nav span {
+    font-size: 0.95rem; /* Slightly smaller for navigation */
+    color: var(--color-text-muted);
+    transition: color 0.2s ease-in-out;
+    padding: 0 0.75rem; /* Spacing between nav items */
+}
+
+header nav span:hover {
+    color: var(--color-primary);
+}
+
+footer#footer p,
+footer#footer a {
+    font-size: 0.9rem; /* Smaller footer text */
+    color: var(--color-text-muted);
+}
+
+footer#footer a:hover {
+    color: var(--color-primary);
+}
+
+/* Ensure the main container also respects the background color */
+#main {
+    position: relative;
+    z-index: 1;
+    background-color: transparent; /* Make main container background transparent */
+}
+
+header#header {
+    border-color: var(--color-border);
+}
+
+header#header .flex.items-center.space-x-2 span {
+    color: var(--color-text-base);
+}
+
+section#analyzer {
+    border-color: var(--color-border);
+}
+
+/* Text colors for labels */
+section#analyzer label {
+    color: var(--color-text-base);
+}
+
+/* Ensure headers within sections are themed */
+section#analyzer h1 {
+    color: var(--color-text-base);
+}
+
+/* Ensure elements within analysis results are themed */
+#analysisResults > div {
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 1rem 1.5rem;
+    color: var(--color-text-base);
+}
+
+#analysisResults h2,
+#analysisResults h3 {
+    color: var(--color-text-base);
+}
+
+#analysisResults p,
+#analysisResults span:not(#analysisStatus),
+#analysisResults ul li span {
+    color: var(--color-text-muted);
+}
+
+#analysisResults .border-b {
+    border-color: var(--color-border);
+}
+
+/* Footer specific styling */
+footer#footer {
+    color: var(--color-text-muted);
+    border-color: var(--color-border);
+}
+
+footer#footer p,
+footer#footer a {
+    color: var(--color-text-muted);
+}
+
+footer#footer a:hover {
+    color: var(--color-primary);
+}
+
+.bg-gray-50 {
+    background-color: var(--color-bg-body);
+}
+
+.bg-white {
+    background-color: var(--color-bg-card);
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.text-gray-800 {
+    color: var(--color-text-base);
+}
+
+.text-gray-600 {
+    color: var(--color-text-muted);
+}
+
+.hover\:text-blue-600:hover {
+    color: var(--color-primary);
+}
+
+.bg-blue-600 {
+    background-color: var(--color-primary);
+}
+
+.hover\:bg-blue-700:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.border-gray-300 {
+    border-color: var(--color-border);
+}
+
+.focus\:ring-blue-500:focus {
+    --tw-ring-color: var(--color-primary);
+}
+
+.bg-gray-100 {
+    background-color: var(--color-border);
+}
+
+.hover\:bg-gray-200:hover {
+    background-color: var(--color-text-muted);
+}
+
+.border-2 {
+    border-width: 2px;
+}
+
+.border-dashed {
+    border-style: dashed;
+}
+
+.hover\:border-blue-500:hover {
+    border-color: var(--color-primary);
+}
+
+.bg-blue-100 {
+    background-color: var(--color-primary);
+    opacity: 0.2;
+}
+
+.text-blue-600 {
+    color: var(--color-primary);
+}
+
+.border-blue-600 {
+    border-color: var(--color-primary);
+}
+
+.bg-green-100 {
+    background-color: var(--color-success);
+    opacity: 0.2;
+}
+
+.text-green-600 {
+    color: var(--color-success);
+}
+
+.text-yellow-500 {
+    color: var(--color-warning);
+}
+
+.text-red-500 {
+    color: var(--color-danger);
+}
+
+.bg-red-100 {
+    background-color: var(--color-danger);
+    opacity: 0.2;
+}
+
+.text-red-600 {
+    color: var(--color-danger);
+}
+
+.border-t {
+    border-top-width: 1px;
+    border-color: var(--color-border);
+}
+
+.swap-rotate .swap-on {
+    display: none;
+}
+
+.swap-rotate input:checked ~ .swap-on {
+    display: block;
+}
+
+.swap-rotate input:checked ~ .swap-off {
+    display: none;
+}
+
+.swap-rotate .swap-off {
+    display: block;
+}
+
+/* Apply animations to components */
+/* Navigation links */
+header nav span {
+    transition: color 0.2s ease-in-out;
+    color: var(--color-text-muted);
+}
+
+header nav span:hover {
+    color: var(--color-primary);
+}
+
+/* Input and select fields */
+input[type="url"],
+input[type="password"],
+select {
+    border-color: var(--color-border);
+    background-color: var(--color-bg-card);
+    color: var(--color-text-base);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+input[type="url"]:focus,
+input[type="password"]:focus,
+select:focus {
+    --tw-ring-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Ensure select background and text colors are theme-aware */
+.theme-select {
+    appearance: none; /* Remove default browser styling */
+    background-color: var(--color-bg-card);
+    color: var(--color-text-base);
+    border-color: var(--color-border);
+    /* Add custom arrow */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23374151' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem; /* Make room for the arrow */
+}
+
+[data-theme="dark"] .theme-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.theme-select option {
+    background-color: var(--color-bg-card);
+    color: var(--color-text-base);
+}
+
+/* Buttons */
+button {
+    background-color: var(--color-primary);
+    color: white;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Specific button overrides */
+button[onclick="document.getElementById('imageUpload').click()"],
+button[onclick*="window.open"]:not(.bg-blue-600) {
+    background-color: var(--color-border);
+    color: var(--color-text-base);
+}
+
+button[onclick="document.getElementById('imageUpload').click()"]:hover,
+button[onclick*="window.open"]:not(.bg-blue-600):hover {
+    background-color: var(--color-text-muted);
+    color: var(--color-bg-card);
+}
+
+/* Red buttons */
+button[onclick="removeImage()"] {
+    background-color: var(--color-danger);
+}
+
+button[onclick="removeImage()"]:hover {
+    background-color: #dc2626; /* A slightly darker red for hover */
+}
+
+/* Dropzone */
+#dropZone {
+    border-color: var(--color-border);
+    transition: border-color 0.2s ease-in-out;
+}
+
+#dropZone.hover\:border-blue-500:hover {
+    border-color: var(--color-primary);
+}
+
+/* Results section */
+#results {
+    transition: opacity 0.5s ease-in-out;
+    background-color: var(--color-bg-card);
+    border-color: var(--color-border);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: var(--color-text-base);
+}
+
+#results.hidden {
+    opacity: 0;
+}
+
+#results > div {
+    background-color: var(--color-bg-card);
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 1rem 1.5rem;
+}
+
+#analysisStatus {
+    background-color: var(--color-primary);
+    opacity: 0.2;
+    color: var(--color-primary);
+}
+
+#loadingSpinner div {
+    border-color: var(--color-primary);
+    border-top-color: transparent;
+}
+
+#analysisResults .border-b {
+    border-color: var(--color-border);
+}
+
+#overallScore {
+    color: var(--color-primary);
+}
+
+#summaryBrief {
+    color: var(--color-text-muted);
+}
+
+#keyIssues li {
+    color: var(--color-text-muted);
+}
+
+#keyIssues .fa-exclamation-circle {
+    color: var(--color-warning);
+}
+
+#analysisCategories .border {
+    border-color: var(--color-border);
+    background-color: var(--color-bg-card);
+    color: var(--color-text-base);
+}
+
+#analysisCategories .bg-gray-50 {
+    background-color: var(--color-bg-body);
+}
+
+#analysisCategories .font-medium {
+    color: var(--color-text-base);
+}
+
+#analysisCategories .px-2.py-1.rounded {
+    color: var(--color-text-muted);
+    background-color: var(--color-border);
+}
+
+#analysisCategories .fa-times-circle {
+    color: var(--color-danger);
+}
+
+#analysisCategories .fa-check-circle {
+    color: var(--color-success);
+}
+
+#recommendations .border {
+    border-color: var(--color-border);
+    background-color: var(--color-bg-card);
+    color: var(--color-text-base);
+}
+
+#recommendations .px-2.py-1.rounded {
+    color: var(--color-text-muted);
+    background-color: var(--color-border);
+}
+
+#recommendations .text-blue-600 {
+    color: var(--color-primary);
+}
+
+#recommendations .text-gray-500 {
+    color: var(--color-text-muted);
+}
+
+footer {
+    background-color: var(--color-bg-card);
+    color: var(--color-text-muted);
+}
+
+footer a {
+    color: var(--color-text-muted);
+}
+
+footer a:hover {
+    color: var(--color-primary);
+}
+
+/* Apply glassmorphism effect */
+#header,
+section#analyzer,
+#results > div,
+footer {
+    background-color: rgba(var(--color-bg-card-rgb), 0.6); /* Reduced opacity */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* For Safari support */
+}
+/* Ensure the body and html take full height for Vanta.js */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrollbar from Vanta.js */
+    background-color: transparent; /* Explicitly set to transparent */
+}
+
