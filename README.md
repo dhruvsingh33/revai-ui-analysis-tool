@@ -9,9 +9,9 @@ Built with responsive UI and support for both **light & dark themes**.
 
 | Feature | Preview |
 |--------|---------|
-| Hero Section | ![Preview 1](preview1.png) |
-| UI Analysis Results | ![Preview 2](preview2.png) |
-| Suggestions Panel | ![Preview 3](preview3.png) |
+| Hero Section | ![Preview 1](img/preview1.png) |
+| UI Analysis Results | ![Preview 2](img/preview2.png) |
+| Suggestions Panel | ![Preview 3](img/preview3.png) |
 
 ---
 
