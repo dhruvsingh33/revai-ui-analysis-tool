@@ -56,5 +56,5 @@ Built with responsive UI and support for both **light & dark themes**.
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/smtkuo/ai-website-design-ui-ux-reviewer.git
-cd ai-website-design-ui-ux-reviewer
+git clone "https://github.com/dhruvsingh33/revai-ui-analysis-tool"
+cd website-uiux-reviewer-ai-main
